@@ -1,0 +1,37 @@
+{
+  "name": "nodejsbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sharding.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koenie06/discord.js-music": "^1.2.9",
+    "axios": "^0.21.1",
+    "canvacord": "^4.0.2",
+    "canvas": "^2.7.0",
+    "canvas-constructor": "^3.1.0",
+    "cheerio": "^1.0.0-rc.10",
+    "common-tags": "^1.8.0",
+    "discord-buttons": "^4.0.0",
+    "discord.js": "^13.2.0",
+    "express": "^4.17.1",
+    "flip-text": "^1.2.0",
+    "fs": "0.0.1-security",
+    "mathjs": "^9.5.1",
+    "moment-timezone": "^0.5.33",
+    "mongoose": "^6.0.11",
+    "noblox.js": "^4.12.0",
+    "node-fetch": "^2.6.1",
+    "passport": "^0.5.0",
+    "passport-discord": "^0.1.4",
+    "request": "^2.88.2",
+    "simply-djs": "^2.0.96",
+    "weather-js": "^2.0.0",
+    "weky": "^3.1.8"
+  }
+}
