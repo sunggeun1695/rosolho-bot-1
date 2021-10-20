@@ -6,6 +6,7 @@ const blacklist = []
 const welcomeChannelId = 893045422141112353
 
 client.on('guildMemberAdd', async (member) => {
+    if(member.guild.id !== '893045421528727614') return;
     let condition1 = moment.duration(moment(new Date()).locale('ko').diff(moment(member.user.createdTimestamp).locale('ko'))).asMinutes() < 30;
     let condition2 = member.user.defaultAvatarURL == member.user.displayAvatarURL();
     let condition3 = member.user.username.indexOf('로쏠호') != -1; // 닉네임에 로쏠호가 들어간다면 차단.
