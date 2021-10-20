@@ -51,11 +51,17 @@ module.exports.run = async (client, message, args, prefix) => {
     `)
     .setFooter(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true, format: "jpg" }));
 
+    const gh = new MessageEmbed()
+    .setColor("BLUE")
+    .setTitle('깃허브')
+    .setDescription('로쏠호봇 오픈소스 코드를 2차 창작 후 배포하지 마세요.\nhttps://github.com/team-rosolho/rosolho-bot')
+    .setFooter('로쏠호봇 - Team Rosolho')
+
     const button = new MessageActionRow().addComponents(
         new MessageButton().setStyle("LINK").setURL('https://discord.gg/ZUbNTUx6E2').setLabel('로쏠호봇 서포트 서버')
     )
 
-    message.channel.send({ content: "명령어 리스트에요.", embeds: [embed], components: [button] })
+    message.channel.send({ content: "명령어 리스트에요.", embeds: [embed, gh], components: [button] })
 }
 
 module.exports.help = {
