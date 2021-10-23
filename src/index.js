@@ -10,16 +10,11 @@ client.fetch = require('node-fetch');
 const User = require('./models/PremiumSchema');
 const { createCmd } = require('./dataHandler');
 const config = require('./config');
-client.message = (message) => {  }
 
 module.exports = client;
 
-client.on('messageCreate', async message => {
-    client.message(message);
-});
-
 fs.readdirSync('./src/commands/').forEach(dir => {
-    fs.readdir(`./commands/${dir}`, (err, files) => {
+    fs.readdir(`./src/commands/${dir}`, (err, files) => {
         if (err) throw err;
 
         var jsFiles = files.filter(f => f.split(".").pop() === "js")
@@ -43,7 +38,7 @@ fs.readdirSync('./src/commands/').forEach(dir => {
 })
 
 fs.readdirSync('./src/slashcommands/').forEach(dir => {
-    fs.readdir(`./slashcommands/${dir}`, (err, files) => {
+    fs.readdir(`./src/slashcommands/${dir}`, (err, files) => {
         if (err) throw err;
 
         var jsFiles = files.filter(f => f.split(".").pop() === "js");
