@@ -2,7 +2,7 @@
   "name": "nodejsbot",
   "version": "1.0.0",
   "description": "",
-  "main": "sharding.js",
+  "main": "src/sharding.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,4 +1,4 @@
 node_modules/
-config.js
-index.js
+src/config.js
+src/index.js
 package-lock.json
