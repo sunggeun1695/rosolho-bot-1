@@ -15,18 +15,18 @@ module.exports.run = async (client, message, args) => {
         .setColor("GREEN")
         .setTitle('공지')
         .setDescription(`${msginf}`)
-        .setTimestamp()
+        .setFooter(`${message.author.tag} - 인증됨`, message.author.displayAvatarURL({ dynamic: true }))
 
         client.guilds.cache.forEach(guild => {
             for(let i in channel) {
                 const gchannel = guild.channels.cache.find(
                     val => (
-                        val.name.includes(channel[i]) && val instanceof Discord.TextChannel
+                        val.name.toLowerCase() === channel && val instanceof Discord.TextChannel
                     )
                 )
 
                 if(gchannel instanceof Discord.TextChannel) {
-                    gchannel.send({ embeds: [embed] })
+                    gchannel.topic
                 } else return;
             }
         })

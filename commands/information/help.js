@@ -11,7 +11,7 @@ const { MessageEmbed, Client, Message, MessageActionRow, MessageButton } = requi
 module.exports.run = async (client, message, args, prefix) => {
     const embed = new MessageEmbed()
     .setColor("GREEN")
-    .setTitle('로쏠호봇 명령어 리스트')
+    .setTitle('로쏠호봇 프로젝트는 [이 프로젝트](https://github.com/team-rosolho/rosolho-bot) 로 제작되었어요.')
     .setDescription(stripIndents`
     👤 관리 명령어
     \`!!차단\` - 유저를 차단합니다.
@@ -51,17 +51,12 @@ module.exports.run = async (client, message, args, prefix) => {
     `)
     .setFooter(`${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true, format: "jpg" }));
 
-    const gh = new MessageEmbed()
-    .setColor("BLUE")
-    .setTitle('깃허브')
-    .setDescription('로쏠호봇 오픈소스 코드를 2차 창작 후 배포하지 마세요.\nhttps://github.com/team-rosolho/rosolho-bot')
-    .setFooter('로쏠호봇 - Team Rosolho')
-
     const button = new MessageActionRow().addComponents(
         new MessageButton().setStyle("LINK").setURL('https://discord.gg/ZUbNTUx6E2').setLabel('로쏠호봇 서포트 서버')
     )
 
-    message.channel.send({ content: "명령어 리스트에요.", embeds: [embed, gh], components: [button] })
+    message.channel.send("DM 으로 명령어 리스트를 보내드렸어요.")
+    message.author.send({ embeds: [embed], components: [button] })
 }
 
 module.exports.help = {
