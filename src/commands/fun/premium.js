@@ -1,5 +1,8 @@
 const prem = require('../../models/PremiumSchema');
 const premKey = require('../../models/PremiumKey');
+const canvas = require('canvas');
+
+canvas.module
 
 module.exports.run = async ( client, message, args ) => {
     if(!args[0]) return message.channel.send('키를 입력하세요.')

@@ -1,6 +1,4 @@
 const { MessageEmbed, Client, Message } = require('discord.js');
-const moment = require('moment-timezone');
-moment.locale('ko-KR');
 
 /**
  * 
@@ -8,7 +6,7 @@ moment.locale('ko-KR');
  * @param {Message} message 
  * @param {String[]} args 
  */
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, time) => {
     if(message.channel.type === "DM") return message.channel.send('DM이 서버였나..?');
     const embed = new MessageEmbed()
     .setTitle(`${message.guild.name} 서버의 정보`)
@@ -18,7 +16,7 @@ module.exports.run = async (client, message, args) => {
     .setTimestamp()
     .addField('🆔 서버 ID', `**${message.guild.id}**`)
     .addField('🙎‍♂️ 서버 유저', `**전체: ${message.guild.memberCount} (유저: ${message.guild.members.cache.filter(member => !member.user.bot).size}명 | 봇: ${message.guild.members.cache.filter(member => member.user.bot).size}개)**`)
-    .addField('🎂 서버 생일', `**${moment(message.guild.createdAt).tz('Asia/Seoul').format('YYYY년 MM월 DD일 dd요일 HH시 mm분')}**`)
+    .addField('🎂 서버 생일', `**${time(message.guild.createdAt, "Asia/Seoul")}**`)
     .addField('💬 채널', `**전체: ${message.guild.channels.cache.size} (텍스트: ${message.guild.channels.cache.filter(x => x.type === "GUILD_TEXT").size}개 | 카테고리: ${message.guild.channels.cache.filter(x => x.type === "GUILD_CATEGORY").size}개 | 음성: ${message.guild.channels.cache.filter(x => x.type === "GUILD_VOICE").size}개)**`)
     .addField('💤 잠수 채널', `**${message.guild.afkChannel ? message.guild.afkChannel.name : "없음"}**`, true)
     

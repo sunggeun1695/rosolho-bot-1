@@ -12,6 +12,9 @@ module.exports.run = async (client, message, args) => {
     let warn = args[1];
     if(!warn) warn = 1;
 
+    if(member.id === message.guild.ownerId) return message.channel.send('서버 소유자한테 경고할 수 없습니다.')
+    if(member.id === '813634627800530984') return message.channel.send('로쏠호에게 경고할 수 없습니다.');
+
     let data;
     data = await schema.findOne({
         userId: member.id,

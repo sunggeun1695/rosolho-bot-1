@@ -30,5 +30,6 @@ module.exports.run = async (client, message, args) => {
 module.exports.help = {
     name: "github",
     aliases: ["깃허브", "깃헙"],
-    category: "정보"
+    category: "정보",
+    usage: "!!깃허브 <유저이름>"
 }

@@ -1,5 +1,5 @@
 const { ShardingManager } = require('discord.js');
-const config = require('./config');
+const config = require('./client');
 const manager = new ShardingManager('./src/index.js', { token: config.token, respawn: true });
 
 manager.spawn(2);
